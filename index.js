@@ -1,6 +1,5 @@
 import React from 'react';
 import {getLinkPreview} from 'link-preview-js';
-import PropTypes from 'prop-types';
 import {Image, Linking, Platform, Text, TouchableOpacity, View, ViewPropTypes} from 'react-native';
 
 const REGEX = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/g;
@@ -190,25 +189,4 @@ RNUrlPreview.defaultProps = {
   },
   descriptionNumberOfLines: Platform.isPad ? 4 : 3,
   imageProps: {resizeMode: 'contain'},
-};
-
-RNUrlPreview.propTypes = {
-  onLoad: PropTypes.func,
-  onError: PropTypes.func,
-  text: PropTypes.string,
-  containerStyle: ViewPropTypes ? ViewPropTypes.style : PropTypes.object,
-  imageStyle: ViewPropTypes ? ViewPropTypes.style : PropTypes.object,
-  faviconStyle: ViewPropTypes ? ViewPropTypes.style : PropTypes.object,
-  textContainerStyle: ViewPropTypes ? ViewPropTypes.style : PropTypes.object,
-  title: PropTypes.bool,
-  description: PropTypes.bool,
-  titleStyle: Text.propTypes ? Text.propTypes.style : PropTypes.object,
-  titleNumberOfLines: Text.propTypes ? Text.propTypes.numberOfLines : PropTypes.number,
-  descriptionStyle: Text.propTypes ? Text.propTypes.style : PropTypes.object,
-  descriptionNumberOfLines: Text.propTypes ? Text.propTypes.numberOfLines : PropTypes.number,
-  requestOptions: PropTypes.shape({
-    headers: PropTypes.objectOf(PropTypes.string),
-    imagesPropertyType: PropTypes.string,
-    proxyUrl: PropTypes.string
-  })
 };
